@@ -1,0 +1,13 @@
+customtkinter
+watchdog
+pystray
+Pillow
+requests
+pypdf
+pandas
+openpyxl
+python-docx
+langchain-ollama
+langchain-huggingface
+langchain-community
+faiss-cpu
