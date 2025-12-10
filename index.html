@@ -79,6 +79,7 @@
             margin-bottom: 60px;
         }
 
+        /* Standard Buttons */
         .btn {
             display: flex;
             align-items: center;
@@ -90,6 +91,7 @@
             font-size: 1.1rem;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
         }
 
         .btn-primary {
@@ -123,7 +125,7 @@
             gap: 20px;
             max-width: 900px;
             width: 90%;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
         .guide-card {
@@ -178,6 +180,57 @@
             font-weight: 600;
         }
 
+        /* --- NEW: Ollama Section Styles --- */
+        .ollama-section {
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.2);
+            margin-bottom: 60px;
+        }
+
+        .ollama-header {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #e2e8f0;
+        }
+
+        .ollama-desc {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 25px;
+        }
+
+        .ollama-btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-ollama {
+            background: #ffffff;
+            color: #000000;
+            font-size: 0.9rem;
+            padding: 12px 24px;
+            border-radius: 10px;
+            border: none;
+        }
+        
+        .btn-ollama:hover {
+            background: #e2e8f0;
+            transform: translateY(-2px);
+        }
+
+        .os-svg {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+        }
+
         @media (max-width: 768px) {
             .guide-section { grid-template-columns: 1fr; }
         }
@@ -207,10 +260,10 @@
 
         <div class="btn-group">
             <a href="SmartSortLocal.zip" class="btn btn-primary" download>
-                <span class="icon">🍎</span> Download for macOS
+                <span class="icon">🍎</span> Download Recall (macOS)
             </a>
             <a href="Recall.exe" class="btn btn-secondary" download>
-                <span class="icon">🪟</span> Download for Windows
+                <span class="icon">🪟</span> Download Recall (Windows)
             </a>
         </div>
     </div>
@@ -236,7 +289,7 @@
             </div>
             <div class="guide-step">
                 <div class="step-num">4</div>
-                <div>Ensure <b>Ollama</b> is running in the background.</div>
+                <div>Ensure <b>Ollama</b> is running in the background (See below).</div>
             </div>
         </div>
 
@@ -259,10 +312,31 @@
             </div>
             <div class="guide-step">
                 <div class="step-num">4</div>
-                <div>Ensure <b>Ollama</b> is installed and running.</div>
+                <div>Ensure <b>Ollama</b> is installed and running (See below).</div>
             </div>
         </div>
 
+    </div>
+
+    <div class="ollama-section">
+        <div class="ollama-header">System Requirement</div>
+        <div class="ollama-desc">Recall is powered by Ollama. You must have it installed and running for the AI features to work.</div>
+        
+        <div class="ollama-btn-group">
+            <a href="https://ollama.com/download/mac" target="_blank" class="btn btn-ollama">
+                <svg class="os-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.3-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.5 1.63-.03 3.13 1.09 4.11 1.09.98 0 2.81-1.35 4.74-1.15 1.61.16 2.84.82 3.65 2-3.39 2.02-2.83 7.86.69 9.67zM15.5 5.23c.72-1.25 1.2-2.98.05-4.23-1.45.18-3.17 1.02-3.87 2.27-.67 1.2-.23 3.09 1.25 3.09.98-.01 1.83-.49 2.57-1.13z"/>
+                </svg>
+                Get Ollama for Mac
+            </a>
+
+            <a href="https://ollama.com/download/windows" target="_blank" class="btn btn-ollama">
+                <svg class="os-svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+                </svg>
+                Get Ollama for Windows
+            </a>
+        </div>
     </div>
 
     <div class="footer">
