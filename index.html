@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recall - The Corporate Brain</title>
+    <style>
+        :root {
+            --primary: #2563EB;
+            --secondary: #10B981;
+            --dark: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-gray: #94a3b8;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #020617 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Animated Background */
+        .bg-glow {
+            position: fixed;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, rgba(0,0,0,0) 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            animation: pulse 8s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+            100% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        /* Main Container */
+        .hero-container {
+            text-align: center;
+            padding: 80px 20px 40px;
+            max-width: 600px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin: 0 0 10px 0;
+            background: linear-gradient(to right, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 60px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px 30px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(37, 99, 235, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .icon { margin-right: 12px; font-size: 1.4rem; }
+
+        /* Guide Section */
+        .guide-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 900px;
+            width: 90%;
+            margin-bottom: 80px;
+        }
+
+        .guide-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .guide-card:hover {
+            transform: translateY(-5px);
+            background: rgba(30, 41, 59, 0.9);
+        }
+
+        .guide-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+
+        .guide-step {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .step-num {
+            background: rgba(255, 255, 255, 0.1);
+            color: #60a5fa;
+            font-weight: bold;
+            min-width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 12px;
+            font-size: 0.8rem;
+            margin-top: 2px;
+        }
+
+        .highlight {
+            color: #34d399;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .guide-section { grid-template-columns: 1fr; }
+        }
+
+        .footer {
+            margin-bottom: 40px;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="hero-container">
+        <div style="margin-bottom: 20px;">
+            <span style="background: rgba(16, 185, 129, 0.15); color: #34d399; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; border: 1px solid rgba(16, 185, 129, 0.3);">
+                v1.0 • Local AI • Privacy First
+            </span>
+        </div>
+        <h1>Recall</h1>
+        <p class="subtitle">
+            Turn your messy desktop into a structured Corporate Brain.<br>
+            Organize files automatically and chat with them using local AI.
+        </p>
+
+        <div class="btn-group">
+            <a href="SmartSortLocal.zip" class="btn btn-primary" download>
+                <span class="icon">🍎</span> Download for macOS
+            </a>
+            <a href="Recall.exe" class="btn btn-secondary" download>
+                <span class="icon">🪟</span> Download for Windows
+            </a>
+        </div>
+    </div>
+
+    <div class="guide-section">
+        
+        <div class="guide-card">
+            <div class="guide-title"><span class="icon">🍎</span> macOS Setup</div>
+            
+            <div class="guide-step">
+                <div class="step-num">1</div>
+                <div>Unzip the file and drag <b>Recall</b> into your <span class="highlight">Applications</span> folder.</div>
+            </div>
+            <div class="guide-step">
+                <div class="step-num">2</div>
+                <div><b>Right-click</b> the app and select <b>Open</b> (Required for the first run).</div>
+            </div>
+            <div class="guide-step">
+                <div class="step-num">3</div>
+                <div><b>To Run Permanently:</b><br>
+                Go to <i>System Settings > General > Login Items</i>.<br>
+                Click the <b>(+)</b> button and add Recall.</div>
+            </div>
+            <div class="guide-step">
+                <div class="step-num">4</div>
+                <div>Ensure <b>Ollama</b> is running in the background.</div>
+            </div>
+        </div>
+
+        <div class="guide-card">
+            <div class="guide-title"><span class="icon">🪟</span> Windows Setup</div>
+            
+            <div class="guide-step">
+                <div class="step-num">1</div>
+                <div>Run the installer <b>.exe</b> file.</div>
+            </div>
+            <div class="guide-step">
+                <div class="step-num">2</div>
+                <div>The app will launch in your <b>System Tray</b> (bottom right).</div>
+            </div>
+            <div class="guide-step">
+                <div class="step-num">3</div>
+                <div><b>To Run Permanently:</b><br>
+                Press <b>Win + R</b>, type <code style="background:#333; padding:2px 5px; border-radius:4px;">shell:startup</code>, and press Enter.<br>
+                Copy the <b>Recall Shortcut</b> into this folder.</div>
+            </div>
+            <div class="guide-step">
+                <div class="step-num">4</div>
+                <div>Ensure <b>Ollama</b> is installed and running.</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        Powered by <a href="https://ollama.com" style="color: #60a5fa; text-decoration: none;">Ollama</a> & Llama 3.2
+    </div>
+
+</body>
+</html>
