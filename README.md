@@ -34,3 +34,5 @@ You need **[Ollama](https://ollama.com/)** installed and running on your compute
 ```bash
 # Install the model (run this in terminal)
 ollama run llama3.2
+
+<img width="2000" height="1600" alt="Code’s output demo" src="https://github.com/user-attachments/assets/71dcf24f-45f5-45e8-bc55-f8aff3101ecb" />
