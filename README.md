@@ -1,4 +1,4 @@
-# SmartSort AI 🧠📂
+# Recall: The Corporate Brain 🧠📂
 
 **The Privacy-First Local File Organizer & Intelligence Engine.**
 
